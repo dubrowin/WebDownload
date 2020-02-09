@@ -8,7 +8,7 @@ Previously, I had this done for me via scripts running on-prem (aka, at my house
 
 Going through the architecture left to right:
 
-* Inputs - I currently have 2 Lambdas that are inputs to the Download Queue (SQS). 
+* **Inputs** - I currently have 2 Lambdas that are inputs to the Download Queue (SQS). 
 ** One is my podcatcher
 ** The other finds the next lesson for me in my Gemara/Talmud
 
@@ -18,11 +18,18 @@ These Inputs find URLs and push a message like into the SQS Queue:
 { "Destination" : "Podcast", "URL": "https://url.goes.here/foobar.mp3" }
 ```
 
-The Lambda parses this data, uses the Destination for the Target Directory (I'm pushing to Dropbox via the API) and the URL is downloaded.
+* **Main Function**
+
+The Lambda parses the SQS data, uses the Destination for the Target Directory (I'm pushing to Dropbox via the API) and the URL is downloaded.
 
 My Lambda is written in bash and uses this bash lambda layer. 
 * https://github.com/gkrizek/bash-lambda-layer
 * (Note: I have an agreement with a friend that when my personal workloads have been all added to the cloud to go back and re-write all my bash lambdas is something like python).
+
+* **Outputs**
+
+* I currently send the data to Dropbox for the sync to my end devices
+* And I send a message to a PushBullet SQS Queue which notifies me that there is a new file available.
 
 ## Background
 
