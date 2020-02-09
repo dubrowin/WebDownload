@@ -1,7 +1,7 @@
 # WebDownload
 An AWS solution that uses Lambdas and SQS to download content for me.
 
-I have a number of functions that I wanted/needed to be downloaded from the Internet and pushed to me on a regular basis.
+I have a number of pieces of content that I wanted/needed to be downloaded from the Internet and pushed to me on a regular basis.
 Previously, I had this done for me via scripts running on-prem (aka, at my house), but wanted something more robust.
 
 ![Architectural Diagram](https://github.com/dubrowin/WebDownload/blob/master/Webdownloader.png)
