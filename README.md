@@ -38,7 +38,11 @@ My Lambda is written in bash and uses this bash lambda layer.
 
 ## Background
 
-* I started to use BashPodder (https://lincgeek.org/bashpodder/) probably around 14 years ago. I started by running it on my home machine and having a simple apache webpage internally that I would download my podcasts from every morning. 
+* I started to use BashPodder (https://lincgeek.org/bashpodder/), one of my inputs, probably around 14 years ago. I started by running it on my home machine and having a simple apache webpage internally that I would download my podcasts from every morning. 
+  * I have used the concepts from this many times in my own code
+  * In the past, I have had a number of wrappers and add-ons around this script that I used in the past
+  * But at this point, I have nearly completely re-written this in my own words for my own purposes
+  * And finally I really appreciate the framework that I learned from this.
 * At some point, I started to push the mp3s to Dropbox and later added a DropSync so my device(s) could download everything automatically. 
 * My single installation eventually grew to include a multi-site installation and I used Dropbox as a quorum disk to determine which system would perform the work (the Quorum directory was encrypted with enc-fs). 
 * Later this was updated to be an SQS queue and when 1 of the machines died, it was time to finally move to serverless in the cloud. 
