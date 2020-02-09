@@ -24,7 +24,12 @@ The Lambda parses the SQS data, uses the Destination for the Target Directory (I
 
 My Lambda is written in bash and uses this bash lambda layer. 
 * https://github.com/gkrizek/bash-lambda-layer
-* (Note: I have an agreement with a friend that when my personal workloads have been all added to the cloud to go back and re-write all my bash lambdas is something like python).
+* (***Note:*** I have an agreement with a friend that when my personal workloads have been all added to the cloud to go back and re-write all my bash lambdas is something like python).
+
+* ***Concerns***
+  * Bash executes much slower than some of the other languages
+  * The aws cli in Lambda is also slower for things like copying to/from S3
+  * I'm still running in Lambda free-tier and have AWS Budgets setup to let me know if I ever get close to the free-tier limits. This means I can run longer and more often without fear of rising costs.
 
 * **Outputs**
 
